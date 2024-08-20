@@ -18,7 +18,7 @@ information you need in the docs.
 
 ---
 
-## Create the Project
+<!-- ## Create the Project
 
 - Open your terminal and navigate to the folder where all your projects are located.
 - Execute the following command to create a new project based on a template:
@@ -31,13 +31,13 @@ npx ghcd@latest spiced-academy/fs-web-exercises/tree/main/sessions/recap-project
 - Each member of the group clones the repository to their local machine.
 - Follow the instructions given in the `README.md` file.
 
-> 💡 Don't forget to work on feature branches, otherwise you might run into merge conflicts!
+> 💡 Don't forget to work on feature branches, otherwise you might run into merge conflicts! -->
 
 ---
 
 ## Tasks
 
-### Character Card Component
+<!-- ### Character Card Component
 
 For now you have only one hard coded character card for Rick Sanchez in your HTML. We want to create
 them dynamically in our JavaScript.
@@ -52,7 +52,7 @@ them dynamically in our JavaScript.
 - HINT: go to the docs and look where you can find all the information in the character objects you
   will receive from the API.
 - Think about which input parameters this function will need.
-- The function finally returns the created `li` HTML element.
+- The function finally returns the created `li` HTML element. -->
 
 ### Fetch the Data
 
