@@ -1,5 +1,5 @@
 export function createCharacterCard(element) {
-  console.log(element.type);
+  // console.log(element.type);
 
   // copy html block of first card
   // const newCharacterCard = `<li class="card">

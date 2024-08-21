@@ -1,12 +1,13 @@
 import { createCharacterCard } from "./components/card/card.js";
 import { initNavButtons } from "./components/nav-button/nav-button.js";
 import { renderPagination } from "./components/nav-pagination/nav-pagination.js";
+import { initSearchBar } from "./components/search-bar/search-bar.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]'
 );
-const searchBar = document.querySelector('[data-js="search-bar"]');
+// const searchBar = document.querySelector('[data-js="search-bar"]');
 const navigation = document.querySelector('[data-js="navigation"]');
 // const prevButton = document.querySelector('[data-js="button-prev"]');
 // const nextButton = document.querySelector('[data-js="button-next"]');
@@ -20,17 +21,18 @@ const navigation = document.querySelector('[data-js="navigation"]');
 const appState = {
   maxPage: null,
   currentPage: 1,
-  searchQuery: "rick",
+  searchQuery: "",
 };
 
 //TODO: refactor into utils.js:
-export const fetchCharactersByPage = async (appState) => {
-  console.log(appState.currentPage);
-  const url = `https://rickandmortyapi.com/api/character/?page=${appState.currentPage}`;
+export const fetchCharacters = async (appState) => {
+  const url = `https://rickandmortyapi.com/api/character/?page=${appState.currentPage}&name=${appState.searchQuery}`;
+
   try {
     const response = await fetch(url);
     const data = await response.json();
 
+    // initialize maxPage from data response
     appState.maxPage = data.info.pages;
 
     return data;
@@ -39,9 +41,7 @@ export const fetchCharactersByPage = async (appState) => {
   }
 };
 
-export const fetchCharactersByName = async (appState) => {};
-
-const fetchedData = await fetchCharactersByPage(appState);
+const fetchedData = await fetchCharacters(appState);
 
 //TODO: refactor into cardsList.js:
 export const renderCards = (data) => {
@@ -55,9 +55,7 @@ export const renderCards = (data) => {
   });
 };
 
-//TODO: write pagination fn:
-renderCards(fetchedData);
 initNavButtons(appState);
+initSearchBar(appState);
+renderCards(fetchedData);
 renderPagination(appState);
-//TODO: write user input fn:
-// handleUserInput();
