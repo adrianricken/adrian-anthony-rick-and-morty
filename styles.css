@@ -24,9 +24,13 @@ body {
 main {
   display: flex;
   flex-direction: column;
+
   gap: 10px;
 }
 
 .title {
   padding: 10px 0;
 }
+/* .card-container {
+  padding-bottom: 5rem;
+} */
