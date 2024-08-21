@@ -68,7 +68,7 @@ const buttonDataNext = {
   dataJS: "button-next",
 };
 
-createButton(appState, buttonDataPrev);
+// createButton(appState, buttonDataPrev);
 // const prevButton =
 // const nextButton = createButton(appState, buttonDataNext);
 const pagination = renderPagination(appState);
