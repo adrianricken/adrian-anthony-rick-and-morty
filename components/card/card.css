@@ -1,9 +1,15 @@
 .card-container {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* .container { width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; Prevents the text from wrapping to the next line } */
+  /* width: 12ch; */
 }
 .card {
   width: 300px;
   background-color: var(--color-secondary);
+  margin: 2rem;
 }
 
 .card__info {

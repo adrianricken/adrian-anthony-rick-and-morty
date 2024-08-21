@@ -1,11 +1,14 @@
 .navigation {
+  display: flex;
   position: fixed !important;
+  justify-content: space-around;
+  background-color: var(--color-secondary);
   bottom: 0;
   height: 30px;
-  display: grid;
+  width: 100%;
+  /* display: grid; */
   grid-template-columns: 100px 100px 100px;
 }
-
 .navigation__pagination {
   display: grid;
   place-items: center;

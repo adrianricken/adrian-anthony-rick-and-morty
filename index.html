@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1 class="title">Rick and More</h1>
-    <main>
+    <header>
+      <h1 class="title">Rick and More</h1>
       <div class="search-bar-container" data-js="search-bar-container">
         <form action="" class="search-bar" data-js="search-bar">
           <input
@@ -34,7 +34,8 @@
           </button>
         </form>
       </div>
-
+    </header>
+    <main>
       <ul class="card-container" data-js="card-container">
         <!-- //TODO: delete: -->
         <!-- <li class="card">
@@ -59,6 +60,8 @@
           </div>
         </li> -->
       </ul>
+    </main>
+    <footer>
       <nav class="navigation" data-js="navigation">
         <button class="button button--prev" data-js="button-prev">
           previous
@@ -66,7 +69,7 @@
         <span class="navigation__pagination" data-js="pagination"></span>
         <button class="button button--next" data-js="button-next">next</button>
       </nav>
-    </main>
+    </footer>
   </body>
   <script type="module" src="./index.js"></script>
 </html>
