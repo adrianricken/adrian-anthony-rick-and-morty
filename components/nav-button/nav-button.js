@@ -1,4 +1,4 @@
-import { fetchCharactersByPage, renderCards } from "../../index.js";
+import { fetchCharacters, renderCards } from "../../index.js";
 import { renderPagination } from "../nav-pagination/nav-pagination.js";
 
 //TODO: fix carossell and build input for currentPage index…
@@ -22,30 +22,31 @@ async function handleButtonPagination(appState, upOrDown) {
   } else {
     appState.currentPage = appState.currentPage + 1;
   }
-  const data = await fetchCharactersByPage(appState);
-  renderCards(data);
+  handleUIState(appState);
   renderPagination(appState);
 
-  window.scroll({
-    top: 0,
-    behavior: "instant",
-  });
-  handleUIState(appState);
+  const data = await fetchCharacters(appState);
+  renderCards(data);
 }
-const handleUIState = (appState) => {
+
+export const handleUIState = (appState) => {
   prevButton.disabled = false;
   nextButton.disabled = false;
-  if (appState.currentPage === 1) {
+  if (appState.currentPage <= 1) {
     prevButton.disabled = true;
     //  appState.currentPage = appState.maxPage;
-    // const data = await fetchCharactersByPage(appState);
+    // const data = await fetchCharacters(appState);
     // renderCards(data);
     // renderPagination(appState)
   } else if (appState.currentPage >= appState.maxPage) {
     nextButton.disabled = true;
-    appState.currentPage = 1;
-    // const data = await fetchCharactersByPage(appState);
+    // appState.currentPage = 1;
+    // const data = await fetchCharacters(appState);
     // renderCards(data);
     // renderPagination(appState);
   }
+  window.scroll({
+    top: 0,
+    behavior: "instant",
+  });
 };
