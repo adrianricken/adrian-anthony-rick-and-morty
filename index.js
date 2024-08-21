@@ -1,5 +1,5 @@
 import { createCharacterCard } from "./components/card/card.js";
-import { initNavButtons } from "./components/nav-button/nav-button.js";
+import { createButton } from "./components/nav-button/nav-button.js";
 import { renderPagination } from "./components/nav-pagination/nav-pagination.js";
 import { initSearchBar } from "./components/search-bar/search-bar.js";
 
@@ -55,7 +55,26 @@ export const renderCards = (data) => {
   });
 };
 
-initNavButtons(appState);
+const buttonDataPrev = {
+  class: "button--prev",
+  upOrDown: "-",
+  textContent: "prev",
+  dataJS: "button-prev",
+};
+const buttonDataNext = {
+  class: "button--next",
+  upOrDown: "+",
+  textContent: "next",
+  dataJS: "button-next",
+};
+
+createButton(appState, buttonDataPrev);
+// const prevButton =
+// const nextButton = createButton(appState, buttonDataNext);
+const pagination = renderPagination(appState);
+const navContainer = document.querySelector('[data-js="navigation"]');
+
+// navContainer.append(prevButton, pagination, nextButton);
+
 initSearchBar(appState);
 renderCards(fetchedData);
-renderPagination(appState);
