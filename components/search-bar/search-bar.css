@@ -4,9 +4,11 @@ header .search-bar-container {
 }
 
 header .search-bar {
+  display: flex;
   padding: 10px 20px;
   background-color: white;
   display: grid;
+  height: 30px;
   grid-template-columns: 1fr 24px;
 }
 

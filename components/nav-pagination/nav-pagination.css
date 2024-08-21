@@ -2,7 +2,7 @@
   display: flex;
   position: fixed !important;
   justify-content: space-around;
-  background-color: var(--color-secondary);
+  background-color: var(--color-RMbrown);
   bottom: 0;
   height: 30px;
   width: 100%;
@@ -12,5 +12,6 @@
 .navigation__pagination {
   display: grid;
   place-items: center;
-  background-color: var(--color-secondary);
+  color: white;
+  background-color: var(--color-RMbrown);
 }
