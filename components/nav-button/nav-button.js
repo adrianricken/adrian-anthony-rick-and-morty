@@ -1,22 +1,38 @@
-import { fetchCharacters, renderCards } from "../../index.js";
+import { fetchCharacters, manageLS } from "../../utils/utils.js";
+import { renderCards } from "../cards-list/cards-list.js";
 import { renderPagination } from "../nav-pagination/nav-pagination.js";
 
 //TODO: fix carossell and build input for currentPage index…
 
-const prevButton = document.querySelector('[data-js="button-prev"]');
-const nextButton = document.querySelector('[data-js="button-next"]');
+const navContainer = document.querySelector('[data-js="navigation"]');
+navContainer.classList.add("navigation");
 
-export const initNavButtons = async (appState) => {
-  prevButton.addEventListener("click", async () => {
-    handleButtonPagination(appState, "-");
+export const createButton = (appState, cardContainer, buttonData) => {
+  const button = document.createElement("button");
+  const icon = document.createElement("img");
+
+  // button.textContent = buttonData.textContent;
+  // icon.src = buttonData.iconPNG;
+
+  if (buttonData.textContent === "prev") {
+    icon.src = "../../assets/arrow-left-3099.png";
+  } else {
+    icon.src = "../../assets/arrow-right-3098.png";
+  }
+
+  button.setAttribute("data-js", buttonData.dataJS);
+  button.classList.add("button", buttonData.class);
+  button.addEventListener("click", async () => {
+    handleButtonPagination(appState, cardContainer, buttonData.upOrDown);
   });
-  nextButton.addEventListener("click", async () => {
-    handleButtonPagination(appState, "+");
-  });
-  handleUIState(appState);
+
+  // handleUIState(appState);
+  button.append(icon);
+
+  return button;
 };
 
-async function handleButtonPagination(appState, upOrDown) {
+async function handleButtonPagination(appState, cardContainer, upOrDown) {
   if (upOrDown === "-") {
     appState.currentPage = appState.currentPage - 1;
   } else {
@@ -26,10 +42,13 @@ async function handleButtonPagination(appState, upOrDown) {
   renderPagination(appState);
 
   const data = await fetchCharacters(appState);
-  renderCards(data);
+  renderCards(data, cardContainer);
+  manageLS("set", appState);
 }
 
 export const handleUIState = (appState) => {
+  const prevButton = document.querySelector('[data-js="button-prev"]');
+  const nextButton = document.querySelector('[data-js="button-next"]');
   prevButton.disabled = false;
   nextButton.disabled = false;
   if (appState.currentPage <= 1) {
