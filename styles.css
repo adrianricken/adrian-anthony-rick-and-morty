@@ -74,7 +74,10 @@ header {
   font-family: "Lazer84"; /* Der Name der Schriftart */
   src: url("./fonts/Lazer84.ttf") format("truetype");
 }
-
+.blur {
+  padding: 5rem;
+  background-color: aqua;
+}
 .title {
   padding: 0.5rem 2.1rem;
   width: 100%;
