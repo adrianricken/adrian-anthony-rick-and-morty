@@ -27,7 +27,10 @@ main {
 
   gap: 10px;
 }
-
+.blur {
+  padding: 5rem;
+  background-color: aqua;
+}
 .title {
   padding: 10px 0;
 }

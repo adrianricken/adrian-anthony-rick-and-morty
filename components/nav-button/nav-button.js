@@ -9,8 +9,16 @@ navContainer.classList.add("navigation");
 
 export const createButton = (appState, cardContainer, buttonData) => {
   const button = document.createElement("button");
+  const icon = document.createElement("img");
 
-  button.textContent = buttonData.textContent;
+  // button.textContent = buttonData.textContent;
+  // icon.src = buttonData.iconPNG;
+
+  if (buttonData.textContent === "prev") {
+    icon.src = "../../assets/arrow-left-3099.png";
+  } else {
+    icon.src = "../../assets/arrow-right-3098.png";
+  }
 
   button.setAttribute("data-js", buttonData.dataJS);
   button.classList.add("button", buttonData.class);
@@ -19,6 +27,8 @@ export const createButton = (appState, cardContainer, buttonData) => {
   });
 
   // handleUIState(appState);
+  button.append(icon);
+
   return button;
 };
 
