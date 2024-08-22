@@ -31,13 +31,21 @@ const buttonDataNext = {
 
 const initApp = async () => {
   manageLS("get", appState);
-  const body = document.querySelector("body");
+  console.log(appState);
+
+  const header = document.querySelector("header");
+  const main = document.querySelector("main");
+  const h1Title = document.createElement("h1");
+  h1Title.textContent = "Rick and More";
+  h1Title.classList.add("title");
+
   const navContainer = document.querySelector('[data-js="navigation"]');
   const searchBarContainer = document.createElement("div");
   const cardContainer = document.createElement("ul");
 
   searchBarContainer.classList.add("search-bar-container");
   cardContainer.setAttribute("data-js", "card-container");
+  cardContainer.classList.add("card-container");
 
   const fetchedData = await fetchCharacters(appState);
 
@@ -51,6 +59,9 @@ const initApp = async () => {
 
   navContainer.append(prevButton, pagination, nextButton);
   searchBarContainer.append(searchBar);
-  body.append(searchBarContainer, cardsList);
+  header.append(h1Title, searchBarContainer);
+  main.append(cardsList);
+
+  manageLS("set", appState);
 };
 initApp();

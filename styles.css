@@ -71,12 +71,17 @@ header {
 }
 
 @font-face {
+  font-family: "plasdrpe"; /* Der Name der Schriftart */
+  src: url("./fonts/plasdrpe.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Lazer84"; /* Der Name der Schriftart */
   src: url("./fonts/Lazer84.ttf") format("truetype");
 }
 .blur {
-  padding: 5rem;
-  background-color: aqua;
+  /* padding: 5rem; */
+  /* background-color: aqua; */
 }
 .title {
   padding: 0.5rem 2.1rem;
@@ -91,7 +96,7 @@ header {
 
 main {
   flex-direction: column;
-  padding: 7.5rem 0 2.5rem 0;
+  padding: 6.5rem 0 2.5rem 0;
   gap: 10px;
   /* background-color: gray; */
 }

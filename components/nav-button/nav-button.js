@@ -15,9 +15,9 @@ export const createButton = (appState, cardContainer, buttonData) => {
   // icon.src = buttonData.iconPNG;
 
   if (buttonData.textContent === "prev") {
-    icon.src = "../../assets/arrow-left-3099.png";
+    icon.src = "../../assets/arrow-left-3099_white.png";
   } else {
-    icon.src = "../../assets/arrow-right-3098.png";
+    icon.src = "../../assets/arrow-right-3098_white.png";
   }
 
   button.setAttribute("data-js", buttonData.dataJS);
