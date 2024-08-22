@@ -12,28 +12,106 @@
 :root {
   --color-primary: rgb(51, 51, 51);
   --color-secondary: #f6f6f6;
+  --color-RMbrown: #44281d;
+  --color-RMyellow: #f0e14a;
+  --color-RMpink: #e89ac7;
+  --color-RMgreen: #97ce4c;
+
   --font-family: system-ui;
 }
 
 body {
+  display: flex;
   font-family: var(--font-family);
   color: var(--color-primary);
-  padding: 20px;
+  /* padding: 20px; */
+
+  background: linear-gradient(45deg, #bfde42, #203745, #41b4c9);
+  background-size: 400% 400%;
+  animation: multiverseShift 8s infinite ease-in-out;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
+@keyframes multiverseShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-  gap: 10px;
+header {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  background-color: var(--color-RMbrown);
+  background: linear-gradient(
+    to bottom,
+    var(--color-RMbrown),
+    var(--color-RMbrown) 85%,
+    transparent 100%
+  );
+  width: 100%;
+  height: 100px;
+  top: 0;
+}
+
+@font-face {
+  font-family: "WubbaLubbaDubDub"; /* Der Name der Schriftart */
+  src: url("./fonts/WubbaLubbaDubDub.otf") format("truetype"),
+    url("./fonts/WubbaLubbaDubDub.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "plasdrip"; /* Der Name der Schriftart */
+  src: url("./fonts/plasdrip.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lazer84"; /* Der Name der Schriftart */
+  src: url("./fonts/Lazer84.ttf") format("truetype");
 }
 .blur {
   padding: 5rem;
   background-color: aqua;
 }
 .title {
-  padding: 10px 0;
+  padding: 0.5rem 2.1rem;
+  width: 100%;
+  top: 0;
+  font-family: "WubbaLubbaDubDub", sans-serif;
+  font-size: 40px;
+  color: #41b4c9;
+  -webkit-text-stroke: #bfde42;
+  -webkit-text-stroke-width: 0.1px;
 }
+
+main {
+  flex-direction: column;
+  padding: 7.5rem 0 2.5rem 0;
+  gap: 10px;
+  /* background-color: gray; */
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 /* .card-container {
   padding-bottom: 5rem;
 } */
+
+/* font-familys:
+Get Schwifty: 
+Wubba Lubba Dub Dub: 
+Morty's Handwriting: 
+Sci-Fi Fonts: 
+Cartoon Fonts: */
