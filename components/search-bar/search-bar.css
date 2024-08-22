@@ -5,9 +5,11 @@ header .search-bar-container {
 
 header .search-bar {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: white;
-  display: grid;
+  /* display: grid; */
   height: 30px;
   grid-template-columns: 1fr 24px;
 }
@@ -20,6 +22,7 @@ header .search-bar__input {
 }
 
 header .search-bar__button {
+  margin-right: 15px;
   border: none;
   background-color: transparent;
 }

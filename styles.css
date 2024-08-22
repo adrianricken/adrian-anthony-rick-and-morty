@@ -25,24 +25,33 @@ body {
   font-family: var(--font-family);
   color: var(--color-primary);
   /* padding: 20px; */
+
+  background: linear-gradient(45deg, #bfde42, #203745, #41b4c9);
+  background-size: 400% 400%;
+  animation: multiverseShift 8s infinite ease-in-out;
 }
 
-@font-face {
-  font-family: "WubbaLubbaDubDub"; /* Der Name der Schriftart */
-  src: url("./fonts/WubbaLubbaDubDub.otf") format("truetype"),
-    url("./fonts/WubbaLubbaDubDub.ttf") format("truetype");
-  /* font-weight: normal;
-  font-style: normal; */
+@keyframes multiverseShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 header {
+  display: flex;
   position: fixed;
   flex-direction: column;
   background-color: var(--color-RMbrown);
   background: linear-gradient(
     to bottom,
     var(--color-RMbrown),
-    var(--color-RMbrown) 80%,
+    var(--color-RMbrown) 85%,
     transparent 100%
   );
   width: 100%;
@@ -50,21 +59,38 @@ header {
   top: 0;
 }
 
+@font-face {
+  font-family: "WubbaLubbaDubDub"; /* Der Name der Schriftart */
+  src: url("./fonts/WubbaLubbaDubDub.otf") format("truetype"),
+    url("./fonts/WubbaLubbaDubDub.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "plasdrip"; /* Der Name der Schriftart */
+  src: url("./fonts/plasdrip.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lazer84"; /* Der Name der Schriftart */
+  src: url("./fonts/Lazer84.ttf") format("truetype");
+}
+
 .title {
   padding: 0.5rem 2.1rem;
   width: 100%;
   top: 0;
   font-family: "WubbaLubbaDubDub", sans-serif;
-  font-size: 35px;
+  font-size: 40px;
   color: #41b4c9;
   -webkit-text-stroke: #bfde42;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 0.1px;
 }
 
 main {
   flex-direction: column;
   padding: 7.5rem 0 2.5rem 0;
   gap: 10px;
+  /* background-color: gray; */
 }
 
 .blur {
