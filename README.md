@@ -1,3 +1,16 @@
+TODO:
+
+- animation on cards (hover)
+- pagination / buttons optic
+- "error" when character is not found
+- general card design
+- grid (cards fixed in center)
+- prev / next / search button
+- header design
+- footer design
+- "Rick and more" as homebutton
+- name if necessary over 2 lines
+
 # Recap Project 3: Rick and Morty App
 
 In this recap project, you are going to create a single page app for browsing all the characters of the famous tv show "Rick and Morty".
