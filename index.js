@@ -6,27 +6,25 @@ import {
   initSearchBar,
 } from "./components/search-bar/search-bar.js";
 import { renderCards } from "./components/cards-list/cards-list.js";
-// import arrowLeft from "./assets/arrow-left-3099.png";
-// import arrowRight from "./assets/arrow-right-3098.png";
 
 const appState = {
   maxPage: null,
   currentPage: 1,
   searchQuery: "",
 };
+
 const buttonDataPrev = {
   class: "button--prev",
   upOrDown: "-",
   textContent: "prev",
   dataJS: "button-prev",
-  // iconPNG: arrowLeft,
 };
+
 const buttonDataNext = {
   class: "button--next",
   upOrDown: "+",
   textContent: "next",
   dataJS: "button-next",
-  // iconPNG: arrowRight,
 };
 
 const initApp = async () => {
